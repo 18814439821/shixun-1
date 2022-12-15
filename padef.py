@@ -18,8 +18,8 @@ def infoHandler(cookies, referer, url):
     timestamp4nextYear = datetime.fromtimestamp(time.mktime(time.strptime('2023-1-1 0:0:0', '%Y-%m-%d %H:%M:%S')))
     timestamp4thisYear = datetime.fromtimestamp(time.mktime(time.strptime('2021-12-31 23:59:59', '%Y-%m-%d %H:%M:%S')))
     oldData = None
-    file = 'D:\\pythonProject\\echarts\\static\\广州天河公安文章.csv'
-    tempfile = 'D:\\pythonProject\\echarts\\static\\广州天河公安文章_temp.csv'
+    file = 'static\\广州天河公安文章.csv'
+    tempfile = 'static\\广州天河公安文章_temp.csv'
     if os.path.exists(file):
         oldData = pd.read_csv(file)
         print(oldData)
@@ -121,7 +121,7 @@ def infoHandler(cookies, referer, url):
                 print(dict)
                 tempStr = ''
     datainfo.close()
-    filedata = pd.read_csv('D:\\pythonProject\\echarts\\static\\爬取高校警情数据.csv', encoding='utf8')
+    filedata = pd.read_csv('static\\爬取高校警情数据.csv', encoding='utf8')
     return filedata
 
 
@@ -144,7 +144,7 @@ def filter4data(df, conn):
     cursor.execute(sql)
 
     data = None
-    file = open('D:\\pythonProject\\echarts\\static\\诈骗数据.csv', 'w+', encoding='utf-8', newline='')
+    file = open('static\\诈骗数据.csv', 'w+', encoding='utf-8', newline='')
     spamwriter = csv.DictWriter(file, fieldnames=['高校名称', '诈骗方式', '诈骗金额', '诈骗月份', '文章发布时间'])
     spamwriter.writeheader()
     # 删去上次更新时存入的临时表数据

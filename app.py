@@ -14,7 +14,7 @@ PORT = 3306
 # 链接MySQL的用户名
 USERNAME = "root"
 # 链接mysql的密码
-PASSWORD = "root"
+PASSWORD = ""
 # MySQL上创建的数据库名称
 DATABASE = "echarts"
 
@@ -210,6 +210,8 @@ def query_datas():
         'value': hidemoney
     })
     dict4 = df2.to_dict(orient="records")
+    
+
 
     return render_template("index.html",
                            count=count, univName=univName,
